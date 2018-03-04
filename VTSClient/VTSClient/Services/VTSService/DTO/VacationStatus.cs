@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VTSClient.Services.DTO
+namespace VTSClient.Services.VTSService.DTO
 {
     public enum VacationStatus
     {
