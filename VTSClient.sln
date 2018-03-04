@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTSClient.iOS", "VTSClient\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTSClient", "VTSClient\VTSClient\VTSClient.csproj", "{D88B160C-7FB0-492E-BEC5-90B81FA2095A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTSClient.Tests", "..\VTSClient.Tests\VTSClient.Tests.csproj", "{CBF6317C-753B-4394-88B7-8902CB89EA7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,18 @@ Global
 		{D88B160C-7FB0-492E-BEC5-90B81FA2095A}.Release|iPhone.Build.0 = Release|Any CPU
 		{D88B160C-7FB0-492E-BEC5-90B81FA2095A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{D88B160C-7FB0-492E-BEC5-90B81FA2095A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Release|iPhone.Build.0 = Release|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{CBF6317C-753B-4394-88B7-8902CB89EA7B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

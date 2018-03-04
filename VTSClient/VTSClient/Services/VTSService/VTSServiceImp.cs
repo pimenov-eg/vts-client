@@ -24,7 +24,7 @@ namespace VTSClient.Services.VTSService
 
         public VacationRequest GetVacation()
         {
-            throw new NotImplementedException();
+            return new VacationRequest { CreatedBy = "User", VacationStatus = VacationStatus.Approved };
         }
 
         public void UpdateVacation()
