@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using VTSClient.Services.VTSService.DTO;
 
 namespace VTSClient.Services.VTSService
 {
     public interface IVTSService
     {
-        IEnumerable<VacationRequest> GetAllVacations();
+        Task<IEnumerable<VacationRequest>> GetAllVacations();
 
-        VacationRequest GetVacation();
+        Task<VacationRequest> GetVacation(Guid vacationId);
 
         void CreateVacation();
 
