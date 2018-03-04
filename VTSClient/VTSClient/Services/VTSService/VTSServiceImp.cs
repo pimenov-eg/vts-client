@@ -10,16 +10,23 @@ namespace VTSClient.Services.VTSService
 {
     public class VTSServiceImp : IVTSService
     {
-        private static readonly string BaseUri = "http://localhost:5000/vts/workflow";
+        private static readonly string _baseAddress = "http://localhost:5000/";
+
+        private static readonly HttpClient _httpClient = new HttpClient { BaseAddress = new Uri(_baseAddress) };
 
         public void CreateVacation()
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateVacation()
+        public async Task<VacationRequest> UpdateVacation(VacationRequest vacation)
         {
-            throw new NotImplementedException();
+            var content = new StringContent(JsonConvert.SerializeObject(vacation), Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync($"vts/workflow", content);
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<VacationRequest>(await response.Content.ReadAsStringAsync());
+            throw new Exception(response.ReasonPhrase);
         }
 
         public void DeleteVacation()
@@ -27,22 +34,23 @@ namespace VTSClient.Services.VTSService
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<VacationRequest>> GetAllVacations()
+        public async Task<VacationList> GetAllVacations()
         {
-            var client = new HttpClient();
-            var resultString = await client.GetStringAsync(BaseUri);
-
-            var result = JsonConvert.DeserializeObject<List<VacationRequest>>(resultString);
-            return result;
+            var response = await _httpClient.GetAsync($"vts/workflow");
+            if (response.IsSuccessStatusCode)
+            {
+                var stringResult = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<VacationList>(stringResult);
+            }
+            throw new Exception(response.ReasonPhrase);
         }
 
         public async Task<VacationRequest> GetVacation(Guid vacationId)
         {
-            var client = new HttpClient();
-            var resultString = await client.GetStringAsync($"{BaseUri}/{vacationId}");
-
-            var result = JsonConvert.DeserializeObject<VacationRequest>(resultString);
-            return result;
+            var response = await _httpClient.GetAsync($"vts/workflow/{vacationId}");
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<VacationRequest>(await response.Content.ReadAsStringAsync());
+            throw new Exception(response.ReasonPhrase);
         }
     }
 }
