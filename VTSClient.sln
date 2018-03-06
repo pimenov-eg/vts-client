@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTSClient.iOS", "VTSClient\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTSClient", "VTSClient\VTSClient\VTSClient.csproj", "{D88B160C-7FB0-492E-BEC5-90B81FA2095A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTSClient.Tests", "..\VTSClient.Tests\VTSClient.Tests.csproj", "{CBF6317C-753B-4394-88B7-8902CB89EA7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTSClient.Tests", "VTSClient\VTSClient.Tests\VTSClient.Tests.csproj", "{CBF6317C-753B-4394-88B7-8902CB89EA7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
