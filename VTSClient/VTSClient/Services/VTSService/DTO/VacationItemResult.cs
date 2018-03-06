@@ -5,9 +5,9 @@ using System.Text;
 
 namespace VTSClient.Services.VTSService.DTO
 {
-    public class VacationList
+    public class VacationItemResult
     {
-        [JsonProperty("listResult")]
-        public List<VacationRequest> Vacations { get; set; }
+        [JsonProperty("itemResult")]
+        public VacationRequest Vacation { get; set; }
     }
 }

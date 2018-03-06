@@ -8,13 +8,13 @@ namespace VTSClient.Services.VTSService
 {
     public interface IVTSService
     {
-        Task<VacationList> GetAllVacations();
+        Task<VacationListResult> GetAllVacations();
 
-        Task<VacationRequest> GetVacation(Guid vacationId);
+        Task<VacationItemResult> GetVacation(Guid vacationId);
 
         void CreateVacation();
 
-        Task<VacationRequest> UpdateVacation(VacationRequest vacation);
+        Task<VacationItemResult> UpdateVacation(VacationRequest vacation);
 
         void DeleteVacation();
     }

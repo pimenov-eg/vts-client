@@ -19,13 +19,13 @@ namespace VTSClient.Services.VTSService
             throw new NotImplementedException();
         }
 
-        public async Task<VacationRequest> UpdateVacation(VacationRequest vacation)
+        public async Task<VacationItemResult> UpdateVacation(VacationRequest vacation)
         {
             var content = new StringContent(JsonConvert.SerializeObject(vacation), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PostAsync($"vts/workflow", content);
             if (response.IsSuccessStatusCode)
-                return JsonConvert.DeserializeObject<VacationRequest>(await response.Content.ReadAsStringAsync());
+                return JsonConvert.DeserializeObject<VacationItemResult>(await response.Content.ReadAsStringAsync());
             throw new Exception(response.ReasonPhrase);
         }
 
@@ -34,22 +34,22 @@ namespace VTSClient.Services.VTSService
             throw new NotImplementedException();
         }
 
-        public async Task<VacationList> GetAllVacations()
+        public async Task<VacationListResult> GetAllVacations()
         {
             var response = await _httpClient.GetAsync($"vts/workflow");
             if (response.IsSuccessStatusCode)
             {
                 var stringResult = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<VacationList>(stringResult);
+                return JsonConvert.DeserializeObject<VacationListResult>(stringResult);
             }
             throw new Exception(response.ReasonPhrase);
         }
 
-        public async Task<VacationRequest> GetVacation(Guid vacationId)
+        public async Task<VacationItemResult> GetVacation(Guid vacationId)
         {
             var response = await _httpClient.GetAsync($"vts/workflow/{vacationId}");
             if (response.IsSuccessStatusCode)
-                return JsonConvert.DeserializeObject<VacationRequest>(await response.Content.ReadAsStringAsync());
+                return JsonConvert.DeserializeObject<VacationItemResult>(await response.Content.ReadAsStringAsync());
             throw new Exception(response.ReasonPhrase);
         }
     }
