@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using System.Linq;
+using VTSClient.DAL;
 using VTSClient.Services.VTSService;
 using VTSClient.Services.VTSService.DTO;
 using VTSClient.Services.VTSService.Entities;
@@ -17,15 +18,18 @@ namespace VTSClient.Tests
             var container = containerBuilder.Build();
 
             var vtsService = container.Resolve<IVTSService>();
+            var vtsDataAccess = container.Resolve<IVTSDataAccess>();
+            Assert.That(vtsService, Is.Not.Null);
+            Assert.That(vtsDataAccess, Is.Not.Null);
 
-            GetAllVacationCheck(vtsService, 5);
+            GetAllVacationCheck(vtsService);
             CreateNewVacationCheck(vtsService);
 
             Console.WriteLine("Everything is OK...");
             Console.ReadLine();
         }
 
-        private static void GetAllVacationCheck(IVTSService vtsService, int expectedCount)
+        private static void GetAllVacationCheck(IVTSService vtsService)
         {
             var allVacations = vtsService.GetAllVacations().Result.Vacations;
             Assert.That(allVacations.Count, Is.GreaterThan(0));
