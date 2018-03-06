@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace VTSClient.Services.VTSService.DTO
+namespace VTSClient.Services.VTSService.Entities
 {
     public class VacationRequest
     {

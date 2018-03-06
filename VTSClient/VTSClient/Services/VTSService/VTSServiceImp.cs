@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using VTSClient.Services.VTSService.DTO;
+using VTSClient.Services.VTSService.Entities;
 
 namespace VTSClient.Services.VTSService
 {
@@ -13,11 +14,6 @@ namespace VTSClient.Services.VTSService
         private static readonly string _baseAddress = "http://localhost:5000/";
 
         private static readonly HttpClient _httpClient = new HttpClient { BaseAddress = new Uri(_baseAddress) };
-
-        public void CreateVacation()
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<VacationItemResult> UpdateVacation(VacationRequest vacation)
         {
@@ -29,9 +25,11 @@ namespace VTSClient.Services.VTSService
             throw new Exception(response.ReasonPhrase);
         }
 
-        public void DeleteVacation()
+        public async void DeleteVacation(Guid vacationId)
         {
-            throw new NotImplementedException();
+            var response = await _httpClient.DeleteAsync($"vts/workflow/{vacationId}");
+            if (!response.IsSuccessStatusCode)
+                throw new Exception(response.ReasonPhrase);
         }
 
         public async Task<VacationListResult> GetAllVacations()

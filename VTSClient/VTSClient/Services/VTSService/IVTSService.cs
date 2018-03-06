@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using VTSClient.Services.VTSService.DTO;
+using VTSClient.Services.VTSService.Entities;
 
 namespace VTSClient.Services.VTSService
 {
@@ -12,10 +13,8 @@ namespace VTSClient.Services.VTSService
 
         Task<VacationItemResult> GetVacation(Guid vacationId);
 
-        void CreateVacation();
-
         Task<VacationItemResult> UpdateVacation(VacationRequest vacation);
 
-        void DeleteVacation();
+        void DeleteVacation(Guid vacationId);
     }
 }
