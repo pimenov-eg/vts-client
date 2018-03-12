@@ -8,7 +8,6 @@ namespace VTSClient
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterModule<ServicesRegistry>();
-            builder.RegisterModule<DALRegistry>();
         }
     }
 }

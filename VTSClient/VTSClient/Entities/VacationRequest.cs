@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VTSClient.Services.VTSService.Entities
 {
     public class VacationRequest
     {
+        [PrimaryKey]
         public Guid Id { get; set; }
 
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
+
         public VacationType VacationType { get; set; }
         public VacationStatus VacationStatus { get; set; }
 
