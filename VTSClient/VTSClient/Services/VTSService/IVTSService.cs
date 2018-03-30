@@ -9,6 +9,8 @@ namespace VTSClient.Services.VTSService
 {
     public interface IVTSService
     {
+        Task<bool> Login(string loginName, string password);
+
         Task<VacationListResult> GetAllVacations();
 
         Task<VacationItemResult> GetVacation(Guid vacationId);

@@ -6,7 +6,7 @@ using VTSClient.Services.VTSService.Entities;
 
 namespace VTSClient.Services.VTSService.DTO
 {
-    public class VacationListResult
+    public class VacationListResult : ResponseMessageResultBase
     {
         [JsonProperty("listResult")]
         public List<VacationRequest> Vacations { get; set; }

@@ -1,27 +1,17 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using MvvmCross.Droid.Views;
 
 namespace VTSClient.Droid
 {
-    [Activity(Label = "VTSClient", MainLauncher = true, Icon = "@mipmap/icon")]
-    public class MainActivity : Activity
+    [Activity(Label = "VTSClient", MainLauncher = false, NoHistory = true, Icon = "@mipmap/icon")]
+    public class MainActivity : MvxSplashScreenActivity
     {
-        int count = 1;
-
-        protected override void OnCreate(Bundle savedInstanceState)
+        public MainActivity()
+            : base(Resource.Drawable.Splash_bg)
         {
-            base.OnCreate(savedInstanceState);
 
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
-
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
-
-            button.Click += delegate { button.Text = $"{count++} clicks!"; };
         }
     }
 }
-
