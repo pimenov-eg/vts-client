@@ -50,8 +50,8 @@ namespace VTSClient.ViewModels
             var test = _service.GetAllVacations().Result.Vacations;
 
             bool isLoggedIn = _service.Login(LoginName, Password).Result;
-            if (!isLoggedIn)
-                IsNotificatinMessageVisible = false;
+            IsNotificatinMessageVisible = !isLoggedIn;
+
 
             // TODO novigate
         }

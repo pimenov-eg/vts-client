@@ -108,11 +108,14 @@ namespace VTSClient.Droid
 			// aapt resource value: 0x7f050001
 			public const int MvxBindingTagUnique = 2131034113;
 			
-			// aapt resource value: 0x7f050002
-			public const int button1 = 2131034114;
+			// aapt resource value: 0x7f050004
+			public const int button1 = 2131034116;
 			
 			// aapt resource value: 0x7f050003
-			public const int imageView1 = 2131034115;
+			public const int loginNameEditText = 2131034115;
+			
+			// aapt resource value: 0x7f050002
+			public const int myViewController = 2131034114;
 			
 			static Id()
 			{
@@ -131,7 +134,7 @@ namespace VTSClient.Droid
 			public const int LoginView = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int Main = 2130968577;
+			public const int SplashScreenView = 2130968577;
 			
 			static Layout()
 			{
