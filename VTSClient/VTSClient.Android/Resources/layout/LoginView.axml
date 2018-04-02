@@ -4,28 +4,5 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-              android:id="@+id/myViewController">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            local:MvxBind="Text LoginName"
-            android:id="@+id/loginNameEditText" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            local:MvxBind="Text Password" />
-        <Button
-            android:text="Login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button1"
-            local:MvxBind="Click LoginCommand" />
+    android:id="@+id/loginViewLayout">
 </LinearLayout>

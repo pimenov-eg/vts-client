@@ -32,28 +32,28 @@ namespace VTSClient.ViewModels
             }
         }
 
-        private bool isNotificatinMessageVisible;
-        public bool IsNotificatinMessageVisible
+        private bool isLoggedIn = true;
+        public bool IsLoggedIn
         {
-            get => isNotificatinMessageVisible;
+            get => isLoggedIn;
             set
             {
-                isNotificatinMessageVisible = value;
-                RaisePropertyChanged(() => IsNotificatinMessageVisible);
+                isLoggedIn = value;
+                RaisePropertyChanged(() => IsLoggedIn);
             }
         }
+
+        public string IsNotLoggedMessage => "Please, retry your login and password pair. Check current Caps Lock and input language settings";
 
         public IMvxCommand LoginCommand => new MvxCommand(Login);
 
         private void Login()
         {
-            var test = _service.GetAllVacations().Result.Vacations;
-
-            bool isLoggedIn = _service.Login(LoginName, Password).Result;
-            IsNotificatinMessageVisible = !isLoggedIn;
-
-
-            // TODO novigate
+            IsLoggedIn = _service.Login(LoginName, Password).Result;
+            if (IsLoggedIn)
+            {
+                // TODO novigate
+            }
         }
 
         public LoginViewModel(IVTSService service)
