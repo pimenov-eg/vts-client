@@ -11,7 +11,7 @@ namespace VTSClient.Android.Converters
     {
         protected override ViewStates Convert(bool value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value ? ViewStates.Gone : ViewStates.Visible;
+            return value ? ViewStates.Invisible : ViewStates.Visible;
         }
     }
 }
