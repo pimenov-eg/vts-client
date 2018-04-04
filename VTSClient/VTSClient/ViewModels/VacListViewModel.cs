@@ -14,9 +14,14 @@ namespace VTSClient.ViewModels
         private readonly IVTSService _service;
         private readonly IMvxNavigationService _navigationService;
 
-        public MvxObservableCollection<string> VacationRequests { get; set; }
+        public MvxObservableCollection<VacationRequest> VacationRequests { get; set; }
 
-        //public MvxObservableCollection<VacationRequest> VacationRequests { get; set; }
+        public IMvxAsyncCommand VacSelectedCommand => new MvxAsyncCommand(VacSelectedHandler);
+
+        private async Task VacSelectedHandler()
+        {
+            // TODO
+        }
 
         public VacListViewModel(IVTSService service, IMvxNavigationService navigationService)
         {
@@ -28,11 +33,7 @@ namespace VTSClient.ViewModels
         {
             await base.Initialize();
             var allVacations = _service.GetAllVacations().Result;
-            //VacationRequests = new MvxObservableCollection<VacationRequest>(allVacations.Vacations);
-            var test = new List<string>();
-            test.Add("One");
-            test.Add("Two");
-            VacationRequests = new MvxObservableCollection<string>(test);
+            VacationRequests = new MvxObservableCollection<VacationRequest>(allVacations.Vacations);
         }
     }
 }

@@ -117,6 +117,9 @@ namespace VTSClient.Droid
 			// aapt resource value: 0x7f050003
 			public const int vacListViewLayout = 2131034115;
 			
+			// aapt resource value: 0x7f050004
+			public const int vacViewItemLayout = 2131034116;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -138,6 +141,9 @@ namespace VTSClient.Droid
 			
 			// aapt resource value: 0x7f040002
 			public const int VacListView = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int VacViewItem = 2130968579;
 			
 			static Layout()
 			{

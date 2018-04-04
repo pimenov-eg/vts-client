@@ -25,22 +25,8 @@ namespace VTSClient.Droid.Views
     {
         protected override void OnCreate(Bundle bundle)
         {
-            RequestWindowFeature(WindowFeatures.NoTitle);
-
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.VacListView);
-
-            var vacListLayout = FindViewById<LinearLayout>(Resource.Id.vacListViewLayout);
-            vacListLayout.SetBackgroundColor(Color.White);
-
-            //var set = this.CreateBindingSet<VacListView, VacListViewModel>();
-            //
-            //var vacationRequests = new MvxListView(ApplicationContext,);
-            //
-            //set.Bind(vacationRequests).To(vm => vm.VacationRequests);
-            //set.Apply();
-            //
-            //vacListLayout.AddView(vacationRequests);
         }
 
 

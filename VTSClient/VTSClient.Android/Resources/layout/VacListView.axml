@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+              xmlns:local="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:id="@+id/vacListViewLayout" >
+  <Mvx.MvxListView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/vacListViewLayout">
-  <Mvx.MvxListView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        local:MvxBind="ItemsSource VacationRequests"/>
+    local:MvxItemTemplate="@layout/vacviewitem"
+    local:MvxBind="ItemsSource VacationRequests;ItemClick VacSelectedCommand"/>
 </LinearLayout>
