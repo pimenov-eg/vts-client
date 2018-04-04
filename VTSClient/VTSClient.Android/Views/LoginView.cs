@@ -30,8 +30,7 @@ namespace VTSClient.Droid.Views
             SetContentView(Resource.Layout.LoginView);
 
             var loginViewLayout = FindViewById<LinearLayout>(Resource.Id.loginViewLayout);
-            loginViewLayout.SetBackgroundResource(Resource.Drawable.Splash_bg);
-            loginViewLayout.Background.SetAlpha(150); 
+            loginViewLayout.SetBackgroundResource(Resource.Drawable.Login_bg);
             loginViewLayout.SetPadding(100, 50, 100, 100);
 
             var set = this.CreateBindingSet<LoginView, LoginViewModel>();

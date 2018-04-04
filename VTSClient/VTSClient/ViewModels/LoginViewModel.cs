@@ -1,7 +1,9 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Core.Navigation;
+using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using VTSClient.Services.VTSService;
 
 namespace VTSClient.ViewModels
@@ -9,6 +11,7 @@ namespace VTSClient.ViewModels
     public class LoginViewModel : MvxViewModel
     {
         private readonly IVTSService _service;
+        private readonly IMvxNavigationService _navigationService;
 
         private string loginName;
         public string LoginName
@@ -45,25 +48,21 @@ namespace VTSClient.ViewModels
 
         public string IsNotLoggedMessage => "Please, retry your login and password pair. Check current Caps Lock and input language settings";
 
-        public IMvxCommand LoginCommand => new MvxCommand(Login);
+        public IMvxAsyncCommand LoginCommand => new MvxAsyncCommand(Login);
 
-        private void Login()
+        private async Task Login()
         {
-            IsLoggedIn = _service.Login(LoginName, Password).Result;
+            IsLoggedIn = await _service.Login(LoginName, Password);
             if (IsLoggedIn)
             {
-                // TODO novigate
+                await _navigationService.Navigate<VacListViewModel>();
             }
         }
 
-        public LoginViewModel(IVTSService service)
+        public LoginViewModel(IVTSService service, IMvxNavigationService navigationService)
         {
             _service = service;
-        }
-
-        public override void Start()
-        {
-            base.Start();
+            _navigationService = navigationService;
         }
     }
 }
