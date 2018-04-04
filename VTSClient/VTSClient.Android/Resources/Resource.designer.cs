@@ -87,7 +87,10 @@ namespace VTSClient.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Splash_bg = 2130837504;
+			public const int Login_bg = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Splash_bg = 2130837505;
 			
 			static Drawable()
 			{
@@ -111,6 +114,9 @@ namespace VTSClient.Droid
 			// aapt resource value: 0x7f050002
 			public const int loginViewLayout = 2131034114;
 			
+			// aapt resource value: 0x7f050003
+			public const int vacListViewLayout = 2131034115;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -130,6 +136,9 @@ namespace VTSClient.Droid
 			// aapt resource value: 0x7f040001
 			public const int SplashScreenView = 2130968577;
 			
+			// aapt resource value: 0x7f040002
+			public const int VacListView = 2130968578;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -145,6 +154,24 @@ namespace VTSClient.Droid
 			
 			// aapt resource value: 0x7f030000
 			public const int Icon = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Icon_Request_Blue = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Icon_Request_Dark = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Icon_Request_Gray = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int Icon_Request_Green = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int Icon_Request_Plum = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int material_add_white = 2130903046;
 			
 			static Mipmap()
 			{
