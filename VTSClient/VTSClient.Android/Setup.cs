@@ -11,6 +11,8 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
+using MvvmCross.Platform.Converters;
+using VTSClient.Android.Converters;
 
 namespace VTSClient.Droid
 {
@@ -24,6 +26,12 @@ namespace VTSClient.Droid
         protected override IMvxApplication CreateApp()
         {
             return new App();
+        }
+
+        protected override void FillValueConverters(IMvxValueConverterRegistry registry)
+        {
+            base.FillValueConverters(registry);
+            registry.AddOrOverwrite("VacTypeToIcon", new VacTypeToIconConverter());
         }
     }
 }
