@@ -1,45 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:rowCount="2"
-    android:columnCount="3"
-    android:id="@+id/vacViewItemLayout">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:local="http://schemas.android.com/apk/res-auto"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/vacViewItemLayout">
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
     <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      local:MvxBind="DrawableId VacationType, Converter=VacTypeToIcon" />
+    <!--
+    <Border android:height="2sp"
+            background="#ccc">
+    </Border>
+-->
+  </LinearLayout>
+
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+      <LinearLayout android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#3BC4D6"
+          android:textStyle="bold"
+          android:textSize="16sp"
+          local:MvxBind="Text Format('{0:MMM dd} - {1:MMM dd}', Start, End)" />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#808080"
+          android:textSize="12sp"
+          local:MvxBind="Text VacationType" />
+      </LinearLayout>
+      <LinearLayout android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right">
+      <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_rowSpan="2"
-        local:MvxBind="DrawableId VacationType, Converter=VacTypeToIcon" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#3BC4D6"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:fontFamily=""
-        android:layout_row="0"
-        android:layout_column="1"
-        local:MvxBind="Text Format('{0:MMM-dd} - {1:MMM-dd}', Start, End)" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:textColor="#808080"
         android:textSize="12sp"
-        android:layout_row="1"
-        android:layout_column="1"
-        local:MvxBind="Text VacationType" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#808080"
-        android:textSize="12sp"
-        android:layout_gravity="center_vertical"
-        android:layout_row="0"
-        android:layout_column="2"
-        android:layout_rowSpan="2"
+        android:gravity="right|center"
         local:MvxBind="Text VacationStatus" />
-</GridLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:gravity="bottom"
+                  android:layout_height="match_parent">
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:background="#ccc" />
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>
