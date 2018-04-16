@@ -16,6 +16,7 @@ using MvvmCross.Binding.BindingContext;
 using VTSClient.ViewModels;
 using VTSClient.Android.Converters;
 using Android.Graphics;
+using Android.Text;
 
 namespace VTSClient.Droid.Views
 {
@@ -45,8 +46,9 @@ namespace VTSClient.Droid.Views
             };
             var passwordText = new EditText(ApplicationContext)
             {
-                Hint = "Password"
-            };
+                Hint = "Password",
+                InputType = InputTypes.TextVariationPassword | InputTypes.ClassText
+        };
             var loginButton = new Button(ApplicationContext) { Text = "SIGN IN" };
             loginButton.SetBackgroundColor(Color.Argb(255, 59, 196, 214));
 
