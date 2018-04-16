@@ -18,7 +18,14 @@ namespace VTSClient.ViewModels
 
         public IMvxAsyncCommand VacSelectedCommand => new MvxAsyncCommand(VacSelectedHandler);
 
+        public IMvxAsyncCommand AddVacCommand => new MvxAsyncCommand(AddVacHandler, () => true);
+
         private async Task VacSelectedHandler()
+        {
+            // TODO
+        }
+
+        private async Task AddVacHandler()
         {
             // TODO
         }

@@ -2,13 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#ffffff"
     android:id="@+id/vacListViewLayout">
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
     <Mvx.MvxListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        local:MvxItemTemplate="@layout/vacviewitem"
-        local:MvxBind="ItemsSource VacationRequests;ItemClick VacSelectedCommand" />
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          local:MvxItemTemplate="@layout/vacviewitem"
+          local:MvxBind="ItemsSource VacationRequests;ItemClick VacSelectedCommand" />
+  </LinearLayout>
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0">
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:text="Add"/>
+      <!--local:MvxBind="Click AddVacCommand" />-->
+  </LinearLayout>
 </LinearLayout>
